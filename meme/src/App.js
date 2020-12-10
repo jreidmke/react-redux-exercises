@@ -12,11 +12,18 @@ function App() {
     setMemes([...memes, meme]);
   }
 
+  const remove = (imgSrc) => {
+    console.log(imgSrc);
+    setMemes(memes => memes.filter(meme => meme.imgSrc !== imgSrc));
+  }
+
   const memeRender = memes.map(m =>
     <Meme
     imgSrc={m.imgSrc}
     topTxt={m.topTxt}
-    btmTxt={m.btmTxt}/>)
+    btmTxt={m.btmTxt}
+    handleRemove={remove}
+    key={m.imgSrc}/>);
 
   return (
     <div className="App">
