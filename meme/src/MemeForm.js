@@ -12,7 +12,6 @@ const MemeForm = ({createMeme}) => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        console.log(name + " " + value);
         setFormData(formData => ({
             ...formData,
             [name]: value
