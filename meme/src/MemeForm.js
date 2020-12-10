@@ -11,15 +11,15 @@ const MemeForm = ({createMeme}) => {
     const [formData, setFormData] = useState(INITIAL_STATE);
 
     const handleChange = (e) => {
-        const {name, val} = e.target;
-        console.log(formData);
-        setFormData(fD => ({
-            ...fD,
-            [name]: val
+        const { name, value } = e.target;
+        console.log(name + " " + value);
+        setFormData(formData => ({
+            ...formData,
+            [name]: value
         }));
     };
 
-    const sumbit = (e) => {
+    const submit = (e) => {
         e.preventDefault();
         createMeme({...formData});
         setFormData(INITIAL_STATE);
@@ -27,25 +27,28 @@ const MemeForm = ({createMeme}) => {
 
     return(
         <div>
-            <form onSubmit={sumbit}>
+            <form onSubmit={submit}>
 
                 <label htmlFor="topTxt">Enter Your Top Text</label>
                 <input
                 onChange={handleChange}
                 type="text"
                 name="topTxt"
-                value={formData.topTxtInput}
+                value={formData.topTxt}
                 id="topTxtInput"/>
-<br></br>
+
+                <br></br>
+
                 <label htmlFor="btmTxt">Enter Your Bottom Text</label>
                 <input
                 onChange={handleChange}
                 type="text"
-                name="btmText"
+                name="btmTxt"
                 value={formData.btmTxt}
                 id="btmTxtInput"/>
 
-<br></br>
+                <br></br>
+
                 <label htmlFor="imgSrc">Enter Your Image Source</label>
                 <input
                 onChange={handleChange}
@@ -53,7 +56,8 @@ const MemeForm = ({createMeme}) => {
                 name="imgSrc"
                 value={formData.imgSrc}
                 id="imgSrcInput"/>
-<br></br>
+
+                <br></br>
 
                 <button>Submit</button>
             </form>
