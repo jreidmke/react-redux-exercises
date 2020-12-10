@@ -14,7 +14,7 @@
 
 #topTxt {
     position: absolute;
-    left: 10px;
+    left: 30px;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     word-wrap: break-word;
 }
@@ -22,8 +22,7 @@
 #btmTxt {
     position: absolute;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    text-align: center;
     word-wrap: break-word;
-    left: 10px;
+    left: 30px;
     bottom: 1px;
 }
