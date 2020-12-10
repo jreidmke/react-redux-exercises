@@ -7,7 +7,8 @@ function rootReducer(state = INITIAL_STATE, action) {
       return {...state, memes: [...state.memes, action.payload]}
 
     case "REMOVE_MEME":
-      return { ...state, count: state.count - 1 };
+      // return { ...state, count: state.count - 1 };
+      return {...state, memes: state.memes.filter(m => m.imgSrc !== action.imgSrc)};
 
     default:
       return state;
@@ -15,3 +16,10 @@ function rootReducer(state = INITIAL_STATE, action) {
 }
 
 export default rootReducer;
+
+// if (action.type === "REMOVE_MEME") {
+//   return {
+//     ...state,
+//     memes: state.memes.filter(meme => meme.id !== action.id)
+//   };
+// }

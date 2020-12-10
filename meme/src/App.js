@@ -16,6 +16,15 @@ function App() {
 
   const addMeme = (meme) => dispatch({ type: "NEW_MEME",  payload: meme});
 
+  // const removeMeme = (imgSrc) => dispatch({ type: "REMOVE_MEME", payload: memes.filter(m => m.imgSrc !== imgSrc)});
+
+  // async function removeMeme(imgSrc) {
+  //   const pL = memes.filter(m => m.imgSrc !== imgSrc);
+  //   console.log(pL);
+  //   await dispatch({ type: "REMOVE_MEME", payload: pL});
+  // }
+
+  const removeMeme = (imgSrc) => dispatch({type: "REMOVE_MEME", imgSrc});
 
   // const remove = (imgSrc) => {
   //   console.log(imgSrc);
@@ -27,7 +36,7 @@ function App() {
     imgSrc={m.imgSrc}
     topTxt={m.topTxt}
     btmTxt={m.btmTxt}
-    // handleRemove={remove}
+    handleRemove={removeMeme}
     key={m.imgSrc}/>);
 
   return (
