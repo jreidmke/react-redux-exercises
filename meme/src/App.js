@@ -21,6 +21,7 @@ function App() {
   return (
     <div className="App">
       <MemeForm createMeme={addMeme}/>
+      {memeRender}
     </div>
   );
 }
