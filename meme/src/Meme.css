@@ -14,15 +14,17 @@
 
 #topTxt {
     position: absolute;
-    left: 30px;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     word-wrap: break-word;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #btmTxt {
     position: absolute;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     word-wrap: break-word;
-    left: 30px;
+    left: 50%;
     bottom: 1px;
+    transform: translate(-50%, -50%);
 }
